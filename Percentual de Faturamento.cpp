@@ -3,18 +3,18 @@
 using namespace std;
 
 typedef long long ll;
-typedef long double lb;
-
+typedef long double ld;
+#define pb push_back
 
 int main () {
 
     string estado; // string para guardar os estados
-    lb faturamento; // variavel para guardar o faturamento
-    lb total = 0; //variavel que guarda a soma dos faturamentos
+    ld faturamento; // variavel para guardar o faturamento
+    ld total = 0; //variavel que guarda a soma dos faturamentos
 
     vector<string>lista_de_estados; //vector que guarda os estados
     
-    map<string,lb>porcentagem; //map que indexa os estados com os faturamentos
+    map<string,ld>porcentagem; //map que indexa os estados com os faturamentos
 
     cout << "Digite o estado e depois o valor do faturamento mensal da distribuidora daquele estado:" << endl << endl;
     cout << "Estado: ";
@@ -23,7 +23,7 @@ int main () {
         cout << "Valor: R$ ";
         cin >> faturamento;
 
-        lista_de_estados.push_back(estado);
+        lista_de_estados.pb(estado);
 
         porcentagem[estado] = faturamento;
         total+= faturamento;
