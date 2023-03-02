@@ -15,18 +15,16 @@ int main () {
         cout << "O número " << numero << " faz parte da sequência de fibonacci!" << endl;
     }
     else {
-        ll fibonacci[numero]; //Vetor da sequência de fibonacci
-        fibonacci[0] = 0;
-        fibonacci[1] = 1;
-        fibonacci[2] = 1;
+        ll primeiro_termo = 0; //primeiro termo da sequencia
+        ll segundo_termo = 1; //segundo termo da sequencia
+        ll sequencia = primeiro_termo+segundo_termo; //o termo da sequencia que calcularemos daqui pra frente
 
-        ll i = 2; // Variável para atualizar a sequência
-
-        while(fibonacci[i] < numero) { //Atualiza a sequência e verifica se o número da sequência em específico já passou do número digitado ou não
-            i++;
-            fibonacci[i] = fibonacci[i-1] + fibonacci[i-2];
+        while (sequencia < numero) { //Atualiza a sequencia enquanto o termo não é maior ou igual ao número digitado pelo usuário
+            primeiro_termo = segundo_termo;
+            segundo_termo = sequencia;
+            sequencia = primeiro_termo+segundo_termo;
         }
-       if (fibonacci[i] == numero) { //Confere e imprime se o número faz parte ou não
+       if (sequencia == numero) { //Confere e imprime se o número faz parte ou não
         cout << "O número " << numero << " faz parte da sequência de fibonacci!" << endl;
        }
 
