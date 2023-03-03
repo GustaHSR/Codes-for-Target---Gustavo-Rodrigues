@@ -3,7 +3,7 @@
 using namespace std;
 
 typedef long long ll;
-typedef long double lb;
+typedef long double ld;
 
 int main () {
     ll numero; // variável do número que o usuário deve digitar
