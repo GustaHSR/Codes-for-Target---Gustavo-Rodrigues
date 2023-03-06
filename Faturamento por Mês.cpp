@@ -7,8 +7,8 @@ typedef long double ld;
 #define pb push_back
 
 int main () {
-    map<int,ll>faturamento_do_dia; //map de indexação do dia com o faturamento
-    int dia, faturamentos_acima_da_media;
+    vector<int>faturamento_do_dia; //vector de indexação do faturamento
+    int faturamentos_acima_da_media;
     ll valor,maior,menor;
     ld media_mensal;
 
@@ -19,26 +19,25 @@ int main () {
 
     cout << "Insira os dias e os faturamentos de cada dia do mês." << endl << endl;
 
-    for (int i = 0; i < 30; i++) { //Iteração para indexar o dia com o faturamento e calcular a media mensal
-        cout << "Dia: ";
-        cin >> dia;
+    for (int i = 0; i < 30; i++) { //Iteração para a calcular a media mensal e alocar os valores no vector
+        cout << "Dia: " << i+1 << endl;
         cout << "Valor: ";
         cin >> valor;
-        faturamento_do_dia[dia] = valor;
+        faturamento_do_dia.pb(valor);
         media_mensal += valor;
     }
 
     media_mensal /= 30;
 
-    for(const auto &entry: faturamento_do_dia) { //Verificação do maior e do menor faturamento. Verificação também da quantidade de dias com faturamento acima da média
-        if (entry.second > media_mensal) {
+    for(int i = 0; i < 30; i++) { //Verificação do maior e do menor faturamento. Verificação também da quantidade de dias com faturamento acima da média
+        if (faturamento_do_dia[i] > media_mensal) {
          faturamentos_acima_da_media++;
         }
-        if (entry.second > maior) {
-            maior = entry.second;
+        if (faturamento_do_dia[i] > maior) {
+            maior = faturamento_do_dia[i];
         }
-        if (entry.second < menor) {
-            menor = entry.second;
+        if (faturamento_do_dia[i] < menor) {
+            menor = faturamento_do_dia[i];
         }
     }
 
